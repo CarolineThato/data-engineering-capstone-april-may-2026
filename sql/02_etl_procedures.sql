@@ -8,7 +8,7 @@ GO
 /* ------------------------------------------------------------
    1. STAGING
    ------------------------------------------------------------ */
-CREATE OR ALTER PROCEDURE stg.usp_load_staging
+CREATE OR ALTER PROCEDURE stg.load_staging
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -134,7 +134,7 @@ GO
 /* ------------------------------------------------------------
    2. DIMENSIONS
    ------------------------------------------------------------ */
-CREATE OR ALTER PROCEDURE dw.usp_load_dimensions
+CREATE OR ALTER PROCEDURE dw.load_dimensions
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -235,7 +235,7 @@ GO
 /* ------------------------------------------------------------
    3. FACTS  (dimensions must be loaded first)
    ------------------------------------------------------------ */
-CREATE OR ALTER PROCEDURE dw.usp_load_facts
+CREATE OR ALTER PROCEDURE dw.load_facts
 AS
 BEGIN
     SET NOCOUNT ON;
