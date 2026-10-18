@@ -4,7 +4,7 @@
    Why: the raw layer must accept whatever the file contains
    (blank strings, "076 453 0989", "+27...", padded emails) so the
    SSIS load never fails on type conversion. Typing/cleaning is done
-   in stg.usp_load_staging with TRY_CONVERT, where bad values are
+   in stg.load_staging with TRY_CONVERT, where bad values are
    logged instead of crashing the data flow.
    VARCHAR (not NVARCHAR) also removes the code page 65001 vs 1252
    error. The file is pure ASCII, so nothing is lost.
