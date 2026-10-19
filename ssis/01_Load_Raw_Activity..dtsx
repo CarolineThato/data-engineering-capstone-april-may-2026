@@ -1,0 +1,2238 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/26/2026 9:23:11 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-I5L42B8"
+  DTS:CreatorName="DESKTOP-I5L42B8\Student"
+  DTS:DTSID="{5E59583F-4975-4C85-BC86-BD986E8125E5}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="7177"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="48"
+  DTS:VersionGUID="{EFE8FD1F-081D-4271-BD0B-CE3484F4E98B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CM_Raw_Activity_CSV]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{C4E8CD4A-263B-4014-B79A-19F3DB7A0419}"
+      DTS:ObjectName="CM_Raw_Activity_CSV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="7177"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Users\Student\Downloads\activity_extract.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="client_number"
+              DTS:DTSID="{18CDD3FB-5660-4737-B5F3-D983CDD92E4E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="first_name"
+              DTS:DTSID="{BE5B62D7-C0F9-4363-B566-B868B59069AB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="last_name"
+              DTS:DTSID="{3DCD034C-976D-4A9B-B41E-FD4041F1B99D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="email"
+              DTS:DTSID="{E1F48EA5-60B9-4A1A-8297-9745A73F64E1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="mobile_number"
+              DTS:DTSID="{27CB9768-498A-4775-A89F-9A80CD793DF0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="date_of_birth"
+              DTS:DTSID="{2E47DB2B-221D-4EFE-BB23-1018E6646B1A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="gender&#xA;"
+              DTS:DTSID="{BD3F3669-B863-4700-BBD1-6899C4B19BBE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="province"
+              DTS:DTSID="{5D28F7DC-1C26-4C75-9005-E00D684BF451}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="city"
+              DTS:DTSID="{E0BC6234-0336-4B8B-8129-D513B3F33F1B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="signup_date"
+              DTS:DTSID="{5C44CD7A-BF25-4687-A83B-262C578B572D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="event_type"
+              DTS:DTSID="{E0F199EC-DE10-49D6-B75B-9931087781BA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="event_date"
+              DTS:DTSID="{DD677C17-1890-48A7-8FA1-6AE5F9B6BB13}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="account_number"
+              DTS:DTSID="{DDD185BC-1C6E-453E-B6FD-74E723A01378}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="product_type"
+              DTS:DTSID="{076118C6-2CA4-4233-A591-5168CEF89F3F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="account_status"
+              DTS:DTSID="{6B217062-9C6A-4AB4-A2A0-EB5027BD9DDE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="credit_limit"
+              DTS:DTSID="{ABDE1FB8-3A4E-4186-8A7F-DB46B238B271}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="loan_amount"
+              DTS:DTSID="{1A97EFE0-8593-4423-9BE6-6D4E8C97A2C9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="account_balance"
+              DTS:DTSID="{1EE1DFAC-4EDA-4BEC-823C-FF68D460C052}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="channel"
+              DTS:DTSID="{3AE91F61-F22B-4B8D-9680-38FE8F6C9A07}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="interaction_type"
+              DTS:DTSID="{ADD8AEBE-46E8-462A-972B-0B5BC3D063EC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="resolved_flag"
+              DTS:DTSID="{92762886-9E75-4C99-B59F-4101206E0CAC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="transaction_type"
+              DTS:DTSID="{33533C12-33FD-4AE2-A887-5FAA5FEE79C5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="amount"
+              DTS:DTSID="{CDAFE9C5-86DA-455D-9988-D945102A5155}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-I5L42B8.Customer360_DW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{CA7CED5E-7838-4506-A997-EC08FB587534}"
+      DTS:ObjectName="DESKTOP-I5L42B8.Customer360_DW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-I5L42B8;Initial Catalog=Customer360_DW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{CA7CED5E-7838-4506-A997-EC08FB587534}DESKTOP-I5L42B8.Customer360_DW;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load Raw Activity Extract"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{AE38AEEE-C3DA-4BF1-8F66-B643782B6F04}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Raw Activity Extract"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Raw Activity Extract\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Raw Activity Extract\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Inputs[Data Conversion Input].Columns[client_number]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="client_number"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[client_number]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Inputs[Data Conversion Input].Columns[first_name]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="first_name"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[first_name]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Inputs[Data Conversion Input].Columns[last_name]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="last_name"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[last_name]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Inputs[Data Conversion Input].Columns[email]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="email"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[email]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Inputs[Data Conversion Input].Columns[mobile_number]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="mobile_number"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[mobile_number]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Inputs[Data Conversion Input].Columns[date_of_birth]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="date_of_birth"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[date_of_birth]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Inputs[Data Conversion Input].Columns[gender&#xA;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="gender&#xA;"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[gender&#xA;]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Inputs[Data Conversion Input].Columns[province]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="province"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[province]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Inputs[Data Conversion Input].Columns[city]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="city"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[city]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Inputs[Data Conversion Input].Columns[signup_date]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="signup_date"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[signup_date]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Inputs[Data Conversion Input].Columns[event_type]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="event_type"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[event_type]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Inputs[Data Conversion Input].Columns[event_date]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="event_date"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[event_date]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Inputs[Data Conversion Input].Columns[account_number]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="account_number"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[account_number]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Inputs[Data Conversion Input].Columns[product_type]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="product_type"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[product_type]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Inputs[Data Conversion Input].Columns[account_status]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="account_status"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[account_status]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Inputs[Data Conversion Input].Columns[credit_limit]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="credit_limit"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[credit_limit]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Inputs[Data Conversion Input].Columns[loan_amount]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="loan_amount"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[loan_amount]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Inputs[Data Conversion Input].Columns[account_balance]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="account_balance"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[account_balance]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Inputs[Data Conversion Input].Columns[channel]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="channel"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[channel]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Inputs[Data Conversion Input].Columns[interaction_type]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="interaction_type"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[interaction_type]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Inputs[Data Conversion Input].Columns[resolved_flag]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="resolved_flag"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[resolved_flag]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Inputs[Data Conversion Input].Columns[transaction_type]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="transaction_type"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[transaction_type]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Inputs[Data Conversion Input].Columns[amount]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="amount"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[amount]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Load Raw Activity Extract\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[client_number_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[client_number_unicode]"
+                      name="client_number_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[client_number]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of first_name]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of first_name]"
+                      name="Copy of first_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[first_name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of last_name]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of last_name]"
+                      name="Copy of last_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[last_name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of email]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of email]"
+                      name="Copy of email"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[email]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of mobile_number]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of mobile_number]"
+                      name="Copy of mobile_number"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[mobile_number]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of date_of_birth]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of date_of_birth]"
+                      name="Copy of date_of_birth"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[date_of_birth]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of gender]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of gender]"
+                      name="Copy of gender"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[gender
+]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of province]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of province]"
+                      name="Copy of province"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[province]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of city]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of city]"
+                      name="Copy of city"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[city]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of signup_date]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of signup_date]"
+                      name="Copy of signup_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[signup_date]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of event_type]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of event_type]"
+                      name="Copy of event_type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[event_type]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of event_date]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of event_date]"
+                      name="Copy of event_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[event_date]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of account_number]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of account_number]"
+                      name="Copy of account_number"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[account_number]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of product_type]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of product_type]"
+                      name="Copy of product_type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[product_type]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of account_status]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of account_status]"
+                      name="Copy of account_status"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[account_status]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of credit_limit]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of credit_limit]"
+                      name="Copy of credit_limit"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[credit_limit]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of loan_amount]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of loan_amount]"
+                      name="Copy of loan_amount"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[loan_amount]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of account_balance]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of account_balance]"
+                      name="Copy of account_balance"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[account_balance]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of channel]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of channel]"
+                      name="Copy of channel"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[channel]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of interaction_type]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of interaction_type]"
+                      name="Copy of interaction_type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[interaction_type]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of resolved_flag]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of resolved_flag]"
+                      name="Copy of resolved_flag"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[resolved_flag]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of transaction_type]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of transaction_type]"
+                      name="Copy of transaction_type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[transaction_type]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of amount]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of amount]"
+                      name="Copy of amount"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[amount]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Load Raw Activity Extract\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Raw Activity Extract\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="7177"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Raw Activity Extract\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CM_Raw_Activity_CSV]"
+                  connectionManagerRefId="Package.ConnectionManagers[CM_Raw_Activity_CSV]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[client_number]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[client_number]"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[client_number]"
+                      name="client_number"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[first_name]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[first_name]"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[first_name]"
+                      name="first_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[last_name]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[last_name]"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[last_name]"
+                      name="last_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[email]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[email]"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[email]"
+                      name="email"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[mobile_number]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[mobile_number]"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[mobile_number]"
+                      name="mobile_number"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[date_of_birth]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[date_of_birth]"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[date_of_birth]"
+                      name="date_of_birth"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[gender&#xA;]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[gender&#xA;]"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[gender&#xA;]"
+                      name="gender&#xA;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[province]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[province]"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[province]"
+                      name="province"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[city]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[city]"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[city]"
+                      name="city"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[signup_date]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[signup_date]"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[signup_date]"
+                      name="signup_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[event_type]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[event_type]"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[event_type]"
+                      name="event_type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[event_date]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[event_date]"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[event_date]"
+                      name="event_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[account_number]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[account_number]"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[account_number]"
+                      name="account_number"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[product_type]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[product_type]"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[product_type]"
+                      name="product_type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[account_status]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[account_status]"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[account_status]"
+                      name="account_status"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[credit_limit]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[credit_limit]"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[credit_limit]"
+                      name="credit_limit"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[loan_amount]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[loan_amount]"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[loan_amount]"
+                      name="loan_amount"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[account_balance]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[account_balance]"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[account_balance]"
+                      name="account_balance"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[channel]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[channel]"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[channel]"
+                      name="channel"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[interaction_type]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[interaction_type]"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[interaction_type]"
+                      name="interaction_type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[resolved_flag]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[resolved_flag]"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[resolved_flag]"
+                      name="resolved_flag"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[transaction_type]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[transaction_type]"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[transaction_type]"
+                      name="transaction_type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[amount]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[amount]"
+                      length="50"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[amount]"
+                      name="amount"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[first_name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="first_name" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[last_name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="last_name" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[email]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[mobile_number]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="mobile_number" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[date_of_birth]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="date_of_birth" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[gender&#xA;]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="gender&#xA;" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[province]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="province" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[city]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[signup_date]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="signup_date" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[event_type]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="event_type" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[event_date]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="event_date" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[account_number]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="account_number" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[product_type]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="product_type" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[account_status]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="account_status" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[credit_limit]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="credit_limit" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[loan_amount]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="loan_amount" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[account_balance]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="account_balance" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[channel]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="channel" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[interaction_type]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="interaction_type" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[resolved_flag]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="resolved_flag" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[transaction_type]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="transaction_type" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[amount]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="amount" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[client_number]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="client_number" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Raw Activity Extract\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[source].[customer_activity_extract]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Raw Activity Extract\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-I5L42B8.Customer360_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-I5L42B8.Customer360_DW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[first_name]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="first_name"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[first_name]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[last_name]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="last_name"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[last_name]"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[last_name]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[email]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="email"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[email]"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[email]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[mobile_number]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="mobile_number"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[mobile_number]"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[mobile_number]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[date_of_birth]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="date_of_birth"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[date_of_birth]"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[date_of_birth]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[province]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="province"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[province]"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[province]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[city]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="city"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[city]"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[city]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[signup_date]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="signup_date"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[signup_date]"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[signup_date]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[event_type]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="event_type"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[event_type]"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[event_type]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[event_date]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="event_date"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[event_date]"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[event_date]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[account_number]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="account_number"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[account_number]"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[account_number]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[product_type]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="product_type"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[product_type]"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[product_type]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[account_status]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="account_status"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[account_status]"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[account_status]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[credit_limit]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="credit_limit"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[credit_limit]"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[credit_limit]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[loan_amount]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="loan_amount"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[loan_amount]"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[loan_amount]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[account_balance]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="account_balance"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[account_balance]"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[account_balance]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[channel]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="channel"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[channel]"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[channel]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[interaction_type]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="interaction_type"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[interaction_type]"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[interaction_type]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[resolved_flag]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="resolved_flag"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[resolved_flag]"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[resolved_flag]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[transaction_type]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="transaction_type"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[transaction_type]"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[transaction_type]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[amount]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="amount"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[amount]"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[amount]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[gender&#xA;]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="gender&#xA;"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[gender&#xA;]" />
+                    <inputColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[client_number]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="client_number"
+                      externalMetadataColumnId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[client_number]"
+                      lineageId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output].Columns[client_number]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[client_number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="client_number" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="first_name" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="last_name" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[mobile_number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="mobile_number" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[date_of_birth]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="date_of_birth" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="gender" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[province]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="province" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[signup_date]"
+                      dataType="wstr"
+                      length="255"
+                      name="signup_date" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[event_type]"
+                      dataType="wstr"
+                      length="255"
+                      name="event_type" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[event_date]"
+                      dataType="wstr"
+                      length="255"
+                      name="event_date" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[account_number]"
+                      dataType="wstr"
+                      length="255"
+                      name="account_number" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[product_type]"
+                      dataType="wstr"
+                      length="255"
+                      name="product_type" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[account_status]"
+                      dataType="wstr"
+                      length="255"
+                      name="account_status" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[credit_limit]"
+                      dataType="wstr"
+                      length="255"
+                      name="credit_limit" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[loan_amount]"
+                      dataType="wstr"
+                      length="255"
+                      name="loan_amount" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[account_balance]"
+                      dataType="wstr"
+                      length="255"
+                      name="account_balance" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[channel]"
+                      dataType="wstr"
+                      length="255"
+                      name="channel" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[interaction_type]"
+                      dataType="wstr"
+                      length="255"
+                      name="interaction_type" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[resolved_flag]"
+                      dataType="wstr"
+                      length="255"
+                      name="resolved_flag" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[transaction_type]"
+                      dataType="wstr"
+                      length="255"
+                      name="transaction_type" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[amount]"
+                      dataType="wstr"
+                      length="255"
+                      name="amount" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Raw Activity Extract\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Raw Activity Extract\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Raw Activity Extract\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Raw Activity Extract\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Raw Activity Extract.Paths[Data Conversion Output]"
+              endId="Package\Load Raw Activity Extract\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Load Raw Activity Extract\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Load Raw Activity Extract.Paths[Flat File Source Output]"
+              endId="Package\Load Raw Activity Extract\Data Conversion.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\Load Raw Activity Extract\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Load Raw Activity Extract"
+          TopLeft="34.6666650730703,96.4999993671974" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load Raw Activity Extract">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Load Raw Activity Extract\Flat File Source"
+          TopLeft="66.3333300095467,115.566665901277" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Load Raw Activity Extract\Data Conversion"
+          TopLeft="64.1666631607547,221.866665123833" />
+        <EdgeLayout
+          Id="Package\Load Raw Activity Extract.Paths[Flat File Source Output]"
+          TopLeft="142.049996585151,157.166665901277">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64.6999992225565"
+              Start="0,0"
+              End="0,57.1999992225565">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.1999992225565" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Load Raw Activity Extract\OLE DB Destination"
+          TopLeft="70.8333294631707,360.53333082623" />
+        <EdgeLayout
+          Id="Package\Load Raw Activity Extract.Paths[Data Conversion Output]"
+          TopLeft="142.166663160755,263.466665123833">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="14.266666302416,97.0666657023962"
+              Start="0,0"
+              End="14.266666302416,89.5666657023962">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5333328511981" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,44.5333328511981"
+                    Point2="0,48.5333328511981"
+                    Point3="4,48.5333328511981" />
+                  <mssgle:LineSegment
+                    End="10.266666302416,48.5333328511981" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10.266666302416,48.5333328511981"
+                    Point2="14.266666302416,48.5333328511981"
+                    Point3="14.266666302416,52.5333328511981" />
+                  <mssgle:LineSegment
+                    End="14.266666302416,89.5666657023962" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Raw Activity Extract\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
