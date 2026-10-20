@@ -1,3 +1,195 @@
+# Customer 360 Data Warehouse – Caroline Thato
+
+This repository holds my solution to the Customer 360 capstone. I built a
+data warehouse in SQL Server, loaded by SSIS, from one raw banking extract
+with 21,500 events. The extract mixes client details, product enrollments,
+CRM interactions and transactions in a single file. The warehouse separates
+them so that the BI team can report on customers, products, transactions and
+customer service without double counting.
+
+## Architecture
+
+![Customer 360 architecture](docs/architecture.png)
+
+The data moves through seven steps:
+
+1. **Source file.** `activity_extract.csv` has 21,500 rows and 23 columns.
+2. **SSIS package 1** (`Load_Customer_Activity.dtsx`) empties the raw table
+   and loads the file into it. It reads every column as text (code page 1252)
+   so that no value can break the load.
+3. **Raw layer.** `source.customer_activity_extract` holds the file exactly
+   as it arrived, with nothing cleaned.
+4. **SSIS package 2** (`02_Build_DW.dtsx`) runs three SQL steps in order:
+   `stg.load_staging`, then `dw.load_dimensions`, then `dw.load_facts`. A fact
+   table never loads before the dimensions it needs.
+5. **Staging layer (`stg`).** The rows are cleaned and split by event type
+   (enrollments, interactions, transactions), and the client details are
+   reduced to one row per client.
+6. **Warehouse (`dw`).** Seven dimensions and three fact tables.
+7. **Business analysis.** The 20 questions are answered with SQL that runs on
+   the warehouse only.
+
+## Dimensional model
+
+The warehouse has three fact tables because the file holds three different
+kinds of events. Putting them in one table would leave most columns empty and
+could count the same thing twice.
+
+| Fact table | One row is | Rows |
+|---|---|---:|
+| `dw.fact_transaction` | one transaction | 15,000 |
+| `dw.fact_interaction` | one CRM interaction | 4,499 |
+| `dw.fact_account` | one account (balance, credit limit, loan amount) | 2,000 |
+
+| Dimension | What it describes | Rows |
+|---|---|---:|
+| `dw.dim_client` | the customer (name, contact details, province, date of birth) | 1,484 |
+| `dw.dim_date` | one row for every day from 2022-01-01 to 2026-12-31 | 1,826 |
+| `dw.dim_product` | Credit Card, Personal Loan, Savings | 3 |
+| `dw.dim_account` | the account number and its status | 2,010 |
+| `dw.dim_channel` | where the event happened (Branch, ATM, POS, Call and so on) | 10 |
+| `dw.dim_interaction_type` | Complaint, Feedback, Fraud Report, Product Application, Query | 5 |
+| `dw.dim_transaction_type` | Deposit, Withdrawal, Fee and so on, and whether money moves in or out | 7 |
+
+The entity relationship diagram is in `docs/retail_bank_erd.png`, with the
+draw.io source file next to it.
+
+Main design decisions:
+
+- **Surrogate keys.** Every dimension has its own generated key (`client_key`,
+  `date_key` and so on). The source has no IDs for transactions or
+  interactions, so I could not rely on it for keys.
+- **Client details are Type 1.** The file only holds each client's current
+  details and does not say when older details were valid. Keeping a history
+  would mean inventing it, so changed details are overwritten.
+- **The raw layer is all text.** Checking and converting happens later in SQL,
+  where a bad value stops the load with a clear message. A bad value cannot be
+  mistaken for a good one.
+- **Odd records are kept, not deleted.** Transactions on accounts with no
+  enrollment record are kept, and their accounts are marked `is_inferred = 1`.
+  Deleting them would remove real money movement.
+- **Signed amounts.** Money out is stored as negative, as in the source.
+  `amount_abs` holds the size, and questions about "transaction value" use it,
+  because a signed total nearly cancels out.
+
+## Data quality
+
+Profiling found, among other things: emails that are blank, padded, in capital
+letters or have a space inside; the same email on two different clients; mobile
+numbers in five formats; blank gender and blank `resolved_flag` values; one
+duplicate row; ten transactions on accounts with no enrollment; and closed
+accounts that still hold balances. I fixed what was safe to fix (spaces, case,
+phone format), flagged what I could not be sure about, and kept every real
+record.
+
+The extract is also uneven over time: activity grows until August 2025 and
+then almost stops. This changes how "recent activity" should be read, and the
+questions that depend on it are shown at two reference dates.
+
+Full list with counts and the reason for each decision:
+[docs/data_quality_note.md](docs/data_quality_note.md)
+
+## ETL implementation
+
+- **Package 1, `Load_Customer_Activity.dtsx`:** an Execute SQL Task truncates
+  the raw table, then a Data Flow Task copies the file into it.
+- **Package 2, `02_Build_DW.dtsx`:** three Execute SQL Tasks joined by success
+  arrows, one for each stored procedure.
+- **Splitting by event type:** done in `stg.load_staging`. Each event type goes
+  to its own staging table, which does the same job as an SSIS Conditional
+  Split.
+- **Safe to run again:** the raw and staging tables are emptied and refilled
+  each run. The dimension and fact loads use `IF NOT EXISTS` and
+  `WHERE NOT EXISTS`, so running the pipeline twice adds nothing new.
+- **Fails loudly:** the procedures stop with an error if the raw table is
+  empty, an event type is unknown, a date or number cannot be read, or a fact
+  table ends up with fewer rows than its staging table. The error numbers are
+  listed in [docs/run_pipeline.md](docs/run_pipeline.md).
+
+## Check that the load worked
+
+After a full run, these tables should have these row counts:
+
+| Table | Rows |
+|---|---:|
+| `source.customer_activity_extract` | 21,500 |
+| `stg.enrollment` | 2,000 |
+| `stg.interaction` | 4,499 |
+| `stg.txn` | 15,000 |
+| `stg.client` | 1,484 |
+| `dw.dim_client` | 1,484 |
+| `dw.dim_account` | 2,010 |
+| `dw.dim_product` | 3 |
+| `dw.fact_transaction` | 15,000 |
+| `dw.fact_interaction` | 4,499 |
+| `dw.fact_account` | 2,000 |
+
+The interaction count is 4,499 and not 4,500 because one row appears twice in
+the file with every field the same, and the load removes the extra copy.
+
+## Business analysis
+
+All 20 questions are answered in `sql/03_answers.sql`, with my definition of
+each business term written above the query. A few results:
+
+- The bank has 1,484 customers. 274 of them (18.5%) have a contact-detail
+  problem such as a missing email, a malformed email, no mobile number or an
+  email shared with another customer.
+- 439 customers hold more than one product, and 366 customers have Savings but
+  no Credit Card (the cross-sell list).
+- 61 of the 559 open credit cards (10.9%) are within 90% of their limit.
+- POS is the busiest transaction channel by both count and value.
+- The number of CRM interactions does not predict how much a customer
+  transacts.
+
+## How to run the project
+
+You need SQL Server, SQL Server Management Studio (SSMS), and Visual Studio or
+SSDT with Integration Services.
+
+1. **Clone the repository** and switch to the branch `intern/caroline-thato`.
+2. **Create the database** `Customer360_DW` in SSMS.
+3. **Run these scripts in SSMS**, in this order (File > Open > File, then
+   Execute):
+   - `sql/00_raw_landing.sql`
+   - `sql/01_create_dw.sql`
+   - `sql/02_etl_procedures.sql`
+
+   Do not run `sql/00_create_tables.sql`. It is the starter file from the
+   brief, and `00_raw_landing.sql` replaces it with all-text columns.
+4. **Open the SSIS project** in `ssis/` (`Customer360_ETL.slnx`). Point the
+   SQL Server connection at your own server and the `Customer360_DW`
+   database. Point the `CM_Raw_Activity_CSV` connection at
+   `data/raw/activity_extract.csv` on your computer. Set the code page to 1252
+   and the header row delimiter to `{LF}`.
+5. **Run `Load_Customer_Activity.dtsx`,** then **`02_Build_DW.dtsx`**.
+6. **Check the row counts** against the table above.
+7. **Run `sql/03_answers.sql`** to see the answers.
+
+A longer guide, with the error messages and what to do about each, is in
+[docs/run_pipeline.md](docs/run_pipeline.md). `sql/99_reset_dw.sql` is optional.
+It deletes the staging and warehouse tables so you can start again.
+
+## What is in this repository
+
+| Path | What it holds |
+|---|---|
+| `sql/00_raw_landing.sql` | the raw landing table, all columns text |
+| `sql/01_create_dw.sql` | the staging and warehouse tables |
+| `sql/02_etl_procedures.sql` | the three load procedures |
+| `sql/03_answers.sql` | the 20 business questions |
+| `sql/99_reset_dw.sql` | optional reset script |
+| `ssis/` | the SSIS project and both packages |
+| `docs/data_quality_note.md` | data quality findings and decisions |
+| `docs/run_pipeline.md` | how to run the pipeline, step by step |
+| `docs/retail_bank_erd.png` | entity relationship diagram |
+| `docs/retail_bank_erd.drawio` | draw.io source of the ERD |
+| `docs/architecture.png` | architecture diagram |
+| `docs/architecture.drawio` | draw.io source of the architecture diagram |
+
+---
+
+# Original project brief
 # Customer 360 Intern Project
 
 A self-contained data engineering capstone for the April-May 2026 intern
